@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Board.module.css";
 import { Sign } from "../utils/constants";
-import { calculateWinner, getWhosTurnItIs } from "../utils/gameUtils";
+import { calculateWinner, checkDraw, getWhosTurnItIs } from "../utils/gameUtils";
 import Cell from "./Cell";
 
 interface Props {
@@ -31,6 +31,8 @@ export default function Board({ onMove, moves, readOnly }: Props): JSX.Element {
 
     setCurrentPlayer(nextPlayer);
     onMove(movesCopy);
+
+    checkDraw(movesCopy);
   }
 
   return (

@@ -23,6 +23,15 @@ export function calculateWinner(
   return null;
 }
 
+export function checkDraw(
+  squares: Sign[] | string[]
+): Sign | null | string[] {
+  if (squares.every(cell => cell !== null && cell !== '') && !calculateWinner(squares)) {
+    return ['meow'];
+  }
+  return null;
+}
+
 export function getPlayerNameFromSign(
   sign: Sign | string,
   game: Game

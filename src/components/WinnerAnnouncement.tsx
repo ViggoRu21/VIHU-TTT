@@ -16,3 +16,12 @@ export function WinnerAnnouncement({ winner, game }: Props) {
     </h1>
   );
 }
+
+export function DrawAnnouncement({}) {
+  return (
+    <h1 className={styles.title}>
+      🤯🫣😱
+      <div> It's a Draw!</div>
+    </h1>
+  )
+}
