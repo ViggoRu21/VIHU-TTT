@@ -1,6 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { describe, it, expect } from "vitest";
+import { render, screen, fireEvent } from '@testing-library/react'
 import Home from "../pages/index";
 
 // Good starting point: https://testing-library.com/docs/react-testing-library/example-intro
@@ -13,4 +14,10 @@ describe("Tests", () => {
   it("should add tests here", () => {
     expect(true).toBe(true);
   });
-});
+
+
+
+
+})
+
+

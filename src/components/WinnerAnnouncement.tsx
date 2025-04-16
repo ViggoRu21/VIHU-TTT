@@ -12,7 +12,7 @@ export function WinnerAnnouncement({ winner, game }: Props) {
   return (
     <h1 className={styles.title}>
       🎉🎊🍾🏆
-      <div>{getPlayerNameFromSign(winner, game)} Won</div>
+      <div data-testid="headerdiv">{getPlayerNameFromSign(winner, game)} Won</div>
     </h1>
   );
 }
@@ -21,7 +21,7 @@ export function DrawAnnouncement({}) {
   return (
     <h1 className={styles.title}>
       🤯🫣😱
-      <div> It's a Draw!</div>
+      <div data-testid="headerdiv">Draw!</div>
     </h1>
   )
 }
