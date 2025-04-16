@@ -1,7 +1,3 @@
 {
   "extends": "next/core-web-vitals",
-  "plugins": ["@viggoru21/no-moment"],
-  "rules": {
-    "@viggoru21/no-moment/no-moment": "error"
-  }
 }
