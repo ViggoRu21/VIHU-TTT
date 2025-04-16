@@ -1,5 +1,5 @@
-import { describe, it, expect, afterEach, vi } from 'vitest'
-import { Sign, EMOJI, pepTalks }          from '../constants'
+import { describe, it, expect } from 'vitest'
+import { Sign, EMOJI }          from '../constants'
 import {
   calculateWinner,
   checkDraw,
@@ -77,18 +77,18 @@ describe('gameUtils', () => {
 
   describe('getPlayerNameFromSign()', () => {
     const fakeGame = {
-      player1_name: 'Alice',
-      player2_name: 'Bob',
+      player1_name: 'Meowser',
+      player2_name: 'Bowser',
     } as any
 
-    it('returns player1 name when sign is X', () => {
+    it('returns Meowser when sign is X', () => {
       expect(getPlayerNameFromSign(Sign.X, fakeGame))
-        .toBe(`${EMOJI[Sign.X]} Alice `)
+        .toBe(`${EMOJI[Sign.X]} Meowser `)
     })
 
-    it('returns player2 name when sign is O', () => {
+    it('returns Bowser when sign is O', () => {
       expect(getPlayerNameFromSign(Sign.O, fakeGame))
-        .toBe(`${EMOJI[Sign.O]} Bob `)
+        .toBe(`${EMOJI[Sign.O]} Bowser `)
     })
 
     it('returns empty string for unknown sign', () => {
