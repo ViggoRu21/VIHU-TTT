@@ -88,10 +88,3 @@ https://vercel.com/viggo-ymir-haflidasons-projects/vihu-ttt
 
 A link to my eslint repo (I couldn't find my error/errors in time and I'm ashamed):
 https://github.com/ViggoRu21/eslint-no-moment
-
-# P.s.
-
-Vona að þetta sé ekki algjörlega til skammar sem lokaverkefni, ég hefði algjörlega getað verið duglegri í að gefa mér tíma fyrir aðra hluti en lokaverkefnið mitt og veff2/Fmál final-in...
-Takk kærlega fyrir þæginlegann, skemmtilegann og upplýsandi áfanga.
-
-Fyrirfram þakkir, Viggó Ý. Hafliðason
