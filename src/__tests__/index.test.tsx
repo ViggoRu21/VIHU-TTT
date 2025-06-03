@@ -11,7 +11,6 @@ import { beforeEach } from "node:test";
 // TODO setup your mock api here (from the mocks folder)
 // Feel free to add more files to test various other components
 
-
 const mockPush = vi.fn();
 vi.mock('next/router', () => ({
   useRouter: () => ({
@@ -124,10 +123,6 @@ describe('Home Page', () => {
   });
 
   it('does not call router.push if names are empty but button is clicked', async () => {
-    // If both inputs are empty, submitting the form should still call createGame,
-    // but our component does not validate emptiness, axios.post is invoked.
-    // We can at least assert that push is called with whatever returned ID,
-    // or we can check that axios.post is called even if inputs are empty.
     vi.spyOn(axios, 'post').mockResolvedValue({ data: { id: '67890' } });
 
     render(<Home />);

@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: playwright OS dependencies
+        run: npx playwright install-deps
+        
       - name: playwright browsers
         run: npx playwright install
 
