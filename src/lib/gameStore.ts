@@ -3,7 +3,7 @@ import { prisma } from "./prisma";
 
 export interface Game {
   id: string;
-  player1_name: string;
+  player1_name?: string | null;
   player2_name?: string | null;
   moves: Sign[] | string[];
   createdAt?: Date;
