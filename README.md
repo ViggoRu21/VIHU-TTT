@@ -86,5 +86,5 @@ Good luck and Have fun :)
 Sælir, here is a link to my vercel:
 https://vercel.com/viggo-ymir-haflidasons-projects/vihu-ttt
 
-A link to my eslint repo (I couldn't find my error/errors in time and I'm ashamed):
+A link to my eslint repo:
 https://github.com/ViggoRu21/eslint-no-moment

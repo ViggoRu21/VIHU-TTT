@@ -25,7 +25,7 @@
     "@testing-library/dom": "^9.3.4",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
-    "@viggoru21/eslint-plugin-no-moment": "^1.2.0",
+    "@viggoru21/eslint-plugin-no-moment": "^1.2.6",
     "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20",
     "@types/react": "^18",
