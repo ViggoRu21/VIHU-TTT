@@ -1,4 +1,4 @@
-import moment from "moment";
+import { formatDistanceToNow } from 'date-fns';
 import Link from "next/link";
 import { Game } from "../lib/gameStore";
 import styles from "../styles/Row.module.css";
@@ -27,7 +27,10 @@ export function GameRow({ game }: Props) {
             </div>
           </div>
           <div className={styles.dateFromNow}>
-            Created: {moment(game.createdAt).fromNow()}
+            Created: {}
+            {formatDistanceToNow(new Date(game.createdAt!), {
+              addSuffix: true,
+            })}
           </div>
         </div>
         <div>
