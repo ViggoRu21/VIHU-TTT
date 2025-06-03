@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build
+        run: npm run build
+
       - name: run dev & wait for start
         run: |
           npm run dev &
@@ -31,10 +34,9 @@ jobs:
 
   unit-ui-tests:
     runs-on: ubuntu-latest
-    needs: [e2e-tests]
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -49,7 +51,7 @@ jobs:
 
   Deploy-Production:
     runs-on: ubuntu-latest
-    needs: [unit-ui-tests]
+    needs: [unit-ui-tests, e2e-tests]
     steps:
       - uses: actions/checkout@v2
       
