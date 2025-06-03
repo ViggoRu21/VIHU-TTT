@@ -8,13 +8,13 @@ import { datadogRum } from '@datadog/browser-rum';
 function MyApp({ Component, pageProps }: AppProps) {
 
 datadogRum.init({
-    applicationId: process.env.DatadogAppId!,
-    clientToken: process.env.DatadogCliTok!,
+    applicationId: process.env.NEXT_PUBLIC_DatadogAppId!,
+    clientToken: process.env.NEXT_PUBLIC_DatadogCliTok!,
     // `site` refers to the Datadog site parameter of your organization
     // see https://docs.datadoghq.com/getting_started/site/
     site: 'datadoghq.eu',
     service: 'vihu-ttt',
-    env: process.env.NODE_ENV,
+    env: process.env.NEXT_PUBLIC_NODE_ENV,
     // Specify a version number to identify the deployed version of your application in Datadog
     // version: '1.0.0',
     sessionSampleRate: 100,
