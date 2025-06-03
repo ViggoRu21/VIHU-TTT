@@ -1,23 +1,22 @@
 import { test, expect } from "@playwright/test";
 
-// Base URL should be configured in playwright.config.ts or use full URL
 const BASE_URL = 'http://localhost:3000';
 
 test.describe('Tic Tac Toe App Navigation and Functionality', () => {
   test('Landing page has correct title', async ({ page }) => {
     await page.goto(`${BASE_URL}/`);
     await expect(page).toHaveTitle(/Tic Tac Toe/i);
-    // Optionally check a heading on the landing page
     await expect(page.locator('h1')).toHaveText(/Tic Tac Toe #️⃣/i);
   });
 
+
   test('Navigate from Landing to All Games page', async ({ page }) => {
     await page.goto(`${BASE_URL}/`);
-    // Assuming there's a link or button with text 'All Games'
     await page.click('text=See all Games');
     await expect(page).toHaveURL(`${BASE_URL}/game/list`);
     await expect(page.locator('h1')).toHaveText(/🎱 All games/i);
   });
+
 
 //  test('Navigate to a specific Game page from All Games', async ({ page }) => {
 //    await page.goto(`${BASE_URL}/games`);
@@ -31,21 +30,19 @@ test.describe('Tic Tac Toe App Navigation and Functionality', () => {
 //    await expect(page.locator('[data-testid="game-board"]')).toBeVisible();
 //  });
 
+
   test('Entering a player name and starting a new game', async ({ page }) => {
     await page.goto(`${BASE_URL}/`);
  
-    // Assume form fields for player names have name attributes
     await page.fill('input[placeholder="❌ Your Name"]', 'Meowser');
  
-    // Assume a button to start the game
     await page.click('text=Start Game');
 
-    // Check that player names appear on screen
     await expect(page.locator('[data-testid="headerdiv"]')).toHaveText(/Meowser/i);
   });
 
+
   test('Game play: clicking cells alternates turns', async ({ page }) => {
-    // Start a new game for testing
     await page.goto(`${BASE_URL}/`);
     await page.fill('input[placeholder="❌ Your Name"]', 'Meowser');
     await page.fill('input[placeholder="⭕ Opponent Name"]', 'Bowser');
@@ -55,20 +52,19 @@ test.describe('Tic Tac Toe App Navigation and Functionality', () => {
     const cell0 = page.locator('[data-testid="0"]');
     const cell1 = page.locator('[data-testid="1"]');
 
-    // Expect Title to Tell Player Meowser to Act
     await expect(page.locator('[data-testid="headerdiv"]')).toHaveText(/Meowser/i);
 
     // First click should place ❌
     await cell0.click();
     await expect(cell0).toHaveText('❌');
 
-    // Expect Title to Tell Player Bowser to Act
     await expect(page.locator('[data-testid="headerdiv"]')).toHaveText(/Bowser/i);
 
     // Next Click Should Place ⭕
     await cell1.click();
     await expect(cell1).toHaveText('⭕');
   });
+
 
   test('Game play: displays winning message when a player wins', async ({ page }) => {
     await page.goto(`${BASE_URL}/`);
@@ -91,6 +87,7 @@ test.describe('Tic Tac Toe App Navigation and Functionality', () => {
 
     await expect(page.locator('[data-testid="headerdiv"]')).toHaveText(/Meowser/i);
   });
+
 
   test('Game play: displays draw message when the board is full with no winner', async ({ page }) => {
     await page.goto(`${BASE_URL}/`);
