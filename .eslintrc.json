@@ -1,9 +1,3 @@
 {
   "extends": "next/core-web-vitals",
-  "plugins": [
-    "@ViggoRu21/eslint-plugin-no-moment"
-  ],
-  "rules": {
-    "@ViggoRu21/eslint-plugin-no-moment/no-moment": "error"
-  }
 }
