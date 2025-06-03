@@ -3,7 +3,25 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
+import { datadogRum } from '@datadog/browser-rum';
+
 function MyApp({ Component, pageProps }: AppProps) {
+
+datadogRum.init({
+    applicationId: process.env.DatadogAppId!,
+    clientToken: process.env.DatadogCliTok!,
+    // `site` refers to the Datadog site parameter of your organization
+    // see https://docs.datadoghq.com/getting_started/site/
+    site: 'datadoghq.eu',
+    service: 'vihu-ttt',
+    env: process.env.NODE_ENV,
+    // Specify a version number to identify the deployed version of your application in Datadog
+    // version: '1.0.0',
+    sessionSampleRate: 100,
+    sessionReplaySampleRate: 20,
+    defaultPrivacyLevel: 'mask-user-input',
+});
+
   return (
     <>
       <Head>
