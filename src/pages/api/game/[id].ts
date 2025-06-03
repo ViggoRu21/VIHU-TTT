@@ -1,4 +1,3 @@
-// pages/api/game/[id].ts
 import type { NextApiRequest, NextApiResponse } from "next"
 import { getGameById, updateGame } from "../../../lib/gameStore"
 
@@ -20,7 +19,7 @@ export default async function game(req: NextApiRequest, res: NextApiResponse) {
       return res.status(200).json(game)
     }
 
-    case "POST": {
+    case "PUT": {
       try {
         const updatedGame = await updateGame(id, req.body.moves)
         return res.status(200).json(updatedGame)
